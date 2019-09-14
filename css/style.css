@@ -39,8 +39,8 @@ body {
   /* makes the card transparent */
   opacity: 0.7;
 }
-
-#home-section .fas {
+/* home and create icon colors  */
+#home-section .fas, #create-section .fas {
   /* icon color */
   color: #008ed6; 
   background: #fff; 
@@ -49,6 +49,7 @@ body {
 
 }
 /* EXPLORE SECTION */
+/* explore and share icons */
 #explore-section .fas, #share-section .fas {
   background: #333; 
   color: #fff; 
