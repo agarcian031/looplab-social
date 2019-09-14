@@ -13,9 +13,9 @@
   <title>Bootstrap Theme</title>
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#main-nav" id="home">
   <!-- NAVIGATION -->
-  <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+  <nav id="main-nav" class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
     <div class="container">
       <a href="index.html" class="navbar-brand">LoopLAB</a>
       <!-- HAMBURGER MENU ON SMALL SCREENS -->
@@ -299,7 +299,6 @@
       </div>
     </div>
   </div>
-
 </div>
 
   <script src="http://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -312,6 +311,24 @@
   <script>
     // Get the current year for the copyright
     $('#year').text(new Date().getFullYear());
+
+    // Init Scrollspy 
+    $('body').scrollspy({target: '#main-nav'}); 
+
+    // Smooth Scrolling 
+    $('#main-nav a').on('click', function(event){
+      if(this.hash !== "") {
+        event.preventDefault(); 
+
+        const hash = this.hash; 
+
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 800, function(){
+          window.location.hash = hash; 
+        })
+      }
+    })
   </script>
 </body>
 
